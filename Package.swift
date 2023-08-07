@@ -33,10 +33,11 @@ let package = Package(
                     .product(name: "BitmovinCollector", package: "bitmovin-analytics-collector-ios")
                     ],
                 cSettings: [
-                    .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "YES")
+                    .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "YES"),
+                    .define("EXCLUDED_ARCHS[sdk=iphonesimulator*]", to: "arm64")
                 ]
         ),
-        .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.blob.core.windows.net/$web/ios_tvos_rc_build/MKPlayer-1.3.2-rc.1.zip", checksum: "635927df007ee4d925094bcd15da96a1aa827758aa750fc532179a0bb2eee3e4"),
+        .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.blob.core.windows.net/$web/ios_tvos_rc_build/MKPlayer-1.5.0-rc.zip", checksum: "45a458c020d53ecc0065ce27cdcec6e6e77c77c6e603f4b855554f7d5340a95d"),
         .binaryTarget(
           name: "GoogleCast",
           path: "./GoogleCast.xcframework"
