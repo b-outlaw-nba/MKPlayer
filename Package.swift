@@ -46,9 +46,9 @@ let package = Package(
           name: "asid_ott_sdk",
           path: "./asid_ott_sdk.xcframework"
         ),
-        .binaryTarget(
-          name: "Alamofire",
-          path: "./Alamofire.xcframework"
-        ),
+        // .binaryTarget(
+        //   name: "Alamofire",
+        //   path: "./Alamofire.xcframework"
+        // ),
     ]
 )
