@@ -25,10 +25,15 @@ let package = Package(
     
     targets: [
         .target(name: "MKPlayerPackage",
-                dependencies: [ "Alamofire", "MKPlayer", "asid_ott_sdk",
-                    .target(name: "GoogleCast",condition: .when(platforms: [.iOS])),
-                                .product(name: "OMSDK_Mediakind", package: "OMSDK_Mediakind",condition: .when(platforms: [.iOS])),
-                            
+                dependencies: [ 
+                    .product(name: "Alamofire", moduleAliases: ["Alamofire": "NBAAlamofire"]),
+                    "MKPlayer", 
+                    "asid_ott_sdk",
+                    .target(
+                        name: "GoogleCast",
+                        condition: .when(platforms: [.iOS])
+                    ),
+                    .product(name: "OMSDK_Mediakind", package: "OMSDK_Mediakind",condition: .when(platforms: [.iOS])),        
                     .product(name: "BitmovinPlayerCore", package: "player-ios-core"),
                     .product(name: "BitmovinCollector", package: "bitmovin-analytics-collector-ios")
                     ],
@@ -46,9 +51,9 @@ let package = Package(
           name: "asid_ott_sdk",
           path: "./asid_ott_sdk.xcframework"
         ),
-        // .binaryTarget(
-        //   name: "Alamofire",
-        //   path: "./Alamofire.xcframework"
-        // ),
+        .binaryTarget(
+          name: "Alamofire",
+          path: "./Alamofire.xcframework"
+        ),
     ]
 )
