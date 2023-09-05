@@ -26,7 +26,7 @@ let package = Package(
     targets: [
         .target(name: "MKPlayerPackage",
                 dependencies: [ 
-                    .product(name: "Alamofire", moduleAliases: ["Alamofire": "NBAAlamofire"]),
+                    "Alamofire",
                     "MKPlayer", 
                     "asid_ott_sdk",
                     .target(
@@ -52,7 +52,7 @@ let package = Package(
           path: "./asid_ott_sdk.xcframework"
         ),
         .binaryTarget(
-          name: "Alamofire",
+          name: "NBAAlamofire",
           path: "./Alamofire.xcframework"
         ),
     ]
