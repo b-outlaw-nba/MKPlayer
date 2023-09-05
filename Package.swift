@@ -26,7 +26,7 @@ let package = Package(
     targets: [
         .target(name: "MKPlayerPackage",
                 dependencies: [ 
-                    "Alamofire",
+                    "NBAAlamofire",
                     "MKPlayer", 
                     "asid_ott_sdk",
                     .target(
