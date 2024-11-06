@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "MKPlayer",
+    name: "MKPlayerPackage",
     platforms: [
         .iOS(.v14),
         .tvOS(.v14),
@@ -13,12 +13,12 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "MKPlayer",
-            targets: ["MKPlayerPackage", "MKPlayer"]),
+            name: "MKPlayerLibrary",
+            targets: ["MKPlayerPackage", "MKPlayerBinary"]),
     ],
     dependencies: [
         .package(url: "https://github.com/bitmovin/player-ios.git",
-                    exact:"3.66.1")
+                    exact:"3.71.1")
     ],
     
     targets: [
@@ -30,6 +30,6 @@ let package = Package(
                     .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "YES")
                 ]
         ),
-        .binaryTarget(name:"MKPlayer" , url: "https://mkplayer.z13.web.core.windows.net/ios_tvos/MKPlayer-1.28.0.zip", checksum: "2c945f2df488475166293889d3b564626b9759b478b3955aa27f9ec54c8447af")
+        .binaryTarget(name:"MKPlayerBinary" , url: "https://mkplayer.z13.web.core.windows.net/ios_tvos/MKPlayer-1.32.0.zip", checksum: "296f8f126a752754fcc906eaf87da2694c73606bf1bb3f757ccdf91e162bd65a")
     ]
 )
